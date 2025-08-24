@@ -4,9 +4,9 @@ Search in the youtube
 
 @TestersTalk
 Scenario:  DataTable Data Driven Testing
-	Given Open the browser
+	Given Open the YouTube homepage
 	When Enter the URL
 	Then Enter search keyword in Youtube
-	| searchKey                |
+	| SearchKey                |
 	| specflow by testers talk |
 	| selenium by testers talk |

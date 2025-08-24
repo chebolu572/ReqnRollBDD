@@ -20,20 +20,17 @@ namespace ReqnRollBDD.StepDefinitions
             foreach(var keyword in searchCriteria)
             {
                 driver.FindElement(By.XPath("//*[@name='search_query']")).Clear();
-                driver.FindElement(By.XPath("//*[@name='search_query']")).SendKeys(keyword.searchKey);
+                driver.FindElement(By.XPath("//*[@name='search_query']")).SendKeys(keyword.SearchKey);
                 driver.FindElement(By.XPath("//*[@name='search_query']")).SendKeys(Keys.Enter);
                 Thread.Sleep(5000);
             }
 
         }
-
-
-
     }
 
     public class SearchKeyTestData
     {
-        public string searchKey { get; set; }
+        public required string SearchKey { get; set; }
     }
 
 

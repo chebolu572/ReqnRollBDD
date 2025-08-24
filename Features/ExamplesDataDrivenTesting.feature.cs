@@ -109,7 +109,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
- await testRunner.GivenAsync("Open the browser", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("Open the YouTube homepage", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
  await testRunner.WhenAsync("Enter the URL", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");

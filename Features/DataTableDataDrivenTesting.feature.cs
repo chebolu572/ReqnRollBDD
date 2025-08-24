@@ -101,13 +101,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
- await testRunner.GivenAsync("Open the browser", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("Open the YouTube homepage", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
  await testRunner.WhenAsync("Enter the URL", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
                 global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
-                            "searchKey"});
+                            "SearchKey"});
                 table1.AddRow(new string[] {
                             "specflow by testers talk"});
                 table1.AddRow(new string[] {

@@ -1,26 +1,24 @@
+using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using Reqnroll;
 
-namespace SpecFlowBDDAutomationFramework.StepDefinitions
+namespace ReqnRollBDD.StepDefinitions
 {
     [Binding]
     public sealed class DataDrivenTestingStepDefinitions
     {
         private IWebDriver driver;
-
-       public DataDrivenTestingStepDefinitions(IWebDriver driver)
+        public DataDrivenTestingStepDefinitions(IWebDriver driver)
         {
             this.driver = driver;
         }
 
-        [Then(@"Search for '([^']*)'")]
-        public void ThenSearchFor(string searchKey)
+        [Then("Search for {string}")]
+        public void ThenSearchFor(string searchkey)
         {
-            driver.FindElement(By.XPath("//*[@name='search_query']")).SendKeys(searchKey);
-            driver.FindElement(By.XPath("//*[@name='search_query']")).SendKeys(Keys.Enter);
+            driver.FindElement(By.Name("search_query")).SendKeys(searchkey);
+            driver.FindElement(By.Name("search_query")).SendKeys(Keys.Enter);
             Thread.Sleep(5000);
         }
-
-
     }
 }
