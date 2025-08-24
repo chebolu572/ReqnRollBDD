@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Allure.Reqnroll" Version="2.12.1" />
+    <PackageReference Include="ExtentReports" Version="5.0.4" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
     <PackageReference Include="Reqnroll.NUnit" Version="2.2.1" />
     <PackageReference Include="nunit" Version="3.14.0" />
