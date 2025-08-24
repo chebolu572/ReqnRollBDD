@@ -44,7 +44,7 @@ namespace ReqnRollBDD.StepDefinitions
         {
             if (channelPage == null)
                 throw new InvalidOperationException("ChannelPage is not initialized.");
-            Assert.AreEqual("Testers Talk - ", channelPage.getTitle());
+            Assert.AreEqual("Testers Talk - YouTube", channelPage.getTitle());
         }
     }
 }
