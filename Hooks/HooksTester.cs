@@ -22,7 +22,7 @@ namespace ReqnRollBDD.Hooks
         public static void BeforeTestRun()
         {
             Console.WriteLine("Running before test run...");
-            ExtentReportInit();
+           // ExtentReportInit();
         }
 
 
