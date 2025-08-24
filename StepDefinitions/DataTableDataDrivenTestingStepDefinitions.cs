@@ -1,8 +1,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using TechTalk.SpecFlow.Assist;
-
-namespace SpecFlowBDDAutomationFramework.StepDefinitions
+namespace ReqnRollBDD.StepDefinitions
 {
     [Binding]
     public sealed class DataTableDataDrivenTestingStepDefinitions

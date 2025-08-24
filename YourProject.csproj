@@ -1,5 +1,0 @@
-<ItemGroup>
-  <None Update="reqnroll.json">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-  </None>
-</ItemGroup>

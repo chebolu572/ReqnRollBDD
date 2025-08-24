@@ -1,22 +1,18 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using SpecFlowBDDAutomationFramework.Pages;
+using Reqnroll;
+using ReqnRollBDD.Pages;
+using System;
 
-namespace SpecFlowBDDAutomationFramework.StepDefinitions
+namespace ReqnRollBDD.StepDefinitions
 {
     [Binding]
-    public sealed class PageObjectModelStepDefinitions
+    public class PageObjectModelStepDefinitions(IWebDriver driver)
     {
-        private IWebDriver driver;
-        SearchPage searchPage;
-        ResultPage resultPage;
-        ChannelPage channelPage;
-
-       public PageObjectModelStepDefinitions(IWebDriver driver)
-        {
-            this.driver = driver;
-        }
+        private readonly IWebDriver driver = driver;
+        private SearchPage? searchPage;
+        private ResultPage? resultPage;
+        private ChannelPage? channelPage;
 
         [Given(@"Enter the youtube URL")]
         public void GivenEnterTheYoutubeURL()
@@ -37,6 +33,8 @@ namespace SpecFlowBDDAutomationFramework.StepDefinitions
         [When(@"Navigate to channel")]
         public void WhenNavigateToChannel()
         {
+            if (resultPage == null)
+                throw new InvalidOperationException("ResultPage is not initialized.");
             channelPage = resultPage.clickOnChannel();
             Thread.Sleep(4000);
         }
@@ -44,9 +42,9 @@ namespace SpecFlowBDDAutomationFramework.StepDefinitions
         [Then(@"Verify title of the page")]
         public void ThenVerifyTitleOfThePage()
         {
+            if (channelPage == null)
+                throw new InvalidOperationException("ChannelPage is not initialized.");
             Assert.AreEqual("Testers Talk - ", channelPage.getTitle());
         }
-
-
     }
 }
