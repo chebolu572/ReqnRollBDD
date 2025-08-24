@@ -16,7 +16,6 @@ namespace ReqnRollBDD.Hooks
         {
             _objectContainer = container;
         }
-        public static ExtentReports _extentReports;
 
 
         [BeforeTestRun]
@@ -38,7 +37,7 @@ namespace ReqnRollBDD.Hooks
         public static void BeforeFeature(FeatureContext featureContext)
         {
             Console.WriteLine("Running before feature...");
-            _feature = _extentReports.CreateTest<Feature>(featureContext.FeatureInfo.Title);
+            _feature = _extentReports?.CreateTest<Feature>(featureContext.FeatureInfo.Title);
         }
 
         [AfterFeature]
@@ -59,7 +58,7 @@ namespace ReqnRollBDD.Hooks
             IWebDriver driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             _objectContainer.RegisterInstanceAs<IWebDriver>(driver);
-            _scenario = _feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
+            _scenario = _feature?.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
         }
 
         [AfterScenario]
@@ -85,19 +84,19 @@ namespace ReqnRollBDD.Hooks
             {
                 if (stepType == "Given")
                 {
-                    _scenario.CreateNode<Given>(stepName);
+                    _scenario?.CreateNode<Given>(stepName);
                 }
                 else if (stepType == "When")
                 {
-                    _scenario.CreateNode<When>(stepName);
+                    _scenario?.CreateNode<When>(stepName);
                 }
                 else if (stepType == "Then")
                 {
-                    _scenario.CreateNode<Then>(stepName);
+                    _scenario?.CreateNode<Then>(stepName);
                 }
                 else if (stepType == "And")
                 {
-                    _scenario.CreateNode<And>(stepName);
+                    _scenario?.CreateNode<And>(stepName);
                 }
             }
 
@@ -107,22 +106,22 @@ namespace ReqnRollBDD.Hooks
 
                 if (stepType == "Given")
                 {
-                    _scenario.CreateNode<Given>(stepName).Fail(scenarioContext.TestError.Message,
+                    _scenario?.CreateNode<Given>(stepName).Fail(scenarioContext.TestError.Message,
                         MediaEntityBuilder.CreateScreenCaptureFromPath(AddScreenshot(driver, scenarioContext)).Build());
                 }
                 else if (stepType == "When")
                 {
-                    _scenario.CreateNode<When>(stepName).Fail(scenarioContext.TestError.Message,
+                    _scenario?  .CreateNode<When>(stepName).Fail(scenarioContext.TestError.Message,
                         MediaEntityBuilder.CreateScreenCaptureFromPath(AddScreenshot(driver, scenarioContext)).Build());
                 }
                 else if (stepType == "Then")
                 {
-                    _scenario.CreateNode<Then>(stepName).Fail(scenarioContext.TestError.Message,
+                        _scenario?.CreateNode<Then>(stepName).Fail(scenarioContext.TestError.Message,
                         MediaEntityBuilder.CreateScreenCaptureFromPath(AddScreenshot(driver, scenarioContext)).Build());
                 }
                 else if (stepType == "And")
                 {
-                    _scenario.CreateNode<And>(stepName).Fail(scenarioContext.TestError.Message,
+                    _scenario?.CreateNode<And>(stepName).Fail(scenarioContext.TestError.Message,
                         MediaEntityBuilder.CreateScreenCaptureFromPath(AddScreenshot(driver, scenarioContext)).Build());
                 }
             }

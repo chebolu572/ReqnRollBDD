@@ -28,8 +28,8 @@ namespace ReqnRollBDD.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Youtube Search Functionality", "\tAs a user\r\n\tI want to search for videos on YouTube\r\n\tSo that I can find content " +
-                "that interests me", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Youtube Search Functionality", "\tAs a user I want to search for videos on YouTube So that I can find content that" +
+                " interests me", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
 #line 1 "Search.feature"
 #line hidden
@@ -91,7 +91,7 @@ namespace ReqnRollBDD.Features
                     "Testertalk"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search for a video on YouTube", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -101,13 +101,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 8
+#line 7
  await testRunner.GivenAsync("Open the YouTube homepage", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 8
  await testRunner.WhenAsync("Enter the URL", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 9
  await testRunner.ThenAsync("Search for a Testers Talk video", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Testertalk"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Search for a video on YouTube2", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -133,13 +133,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 14
+#line 13
  await testRunner.GivenAsync("Open the YouTube homepage", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 15
+#line 14
  await testRunner.WhenAsync("Enter the URL", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
-#line 16
+#line 15
  await testRunner.ThenAsync("Search for a Testers Talk video", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
